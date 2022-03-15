@@ -1,0 +1,57 @@
+$theme-colors: ( "primary": #009ab7, "secondary": #ccebf1, "white": #fff, );
+@import "../bootstrap/scss/bootstrap-utilities";
+//Generate utilites for Cursor
+$utilities: map-merge( $utilities, ( "cursor": ( property: cursor, values: auto default pointer wait text move help not-allowed, ), ));
+@import "../bootstrap/scss/bootstrap.scss";
+.ph-opaque::placeholder {
+    opacity: 1;
+}
+
+.ph-bold::placeholder {
+    font-weight: bold;
+}
+
+input:focus {
+    outline: 0;
+}
+
+.hover-bg:hover {
+    background-color: #009ab7 !important;
+    color: #fff !important;
+    span {
+        color: #fff !important;
+    }
+    svg {
+        fill: #fff;
+    }
+}
+
+.hover-bg-bold:hover {
+    @extend .hover-bg;
+    font-weight: bold;
+}
+
+.hover-underline:hover {
+    text-decoration: underline !important;
+}
+
+.hover-padding:hover {
+    padding: 5px;
+}
+
+.main-content {
+    margin-top: 225px;
+    @include media-breakpoint-up(xxl) {
+        margin-top: 75px;
+    }
+    @include media-breakpoint-up(md) {
+        margin-top: 150px;
+    }
+}
+
+.secondaryMenu {
+    width: 100%;
+    @include media-breakpoint-up(md) {
+        width: min-content;
+    }
+}
